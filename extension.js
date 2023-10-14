@@ -73,11 +73,11 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         this._addItem(new MenuItem(_('Lutris'), () => this._openLutris()));
         this._addItem(new MenuItem(_('Return to Gaming Mode'), () => this._logOut()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-        this._addItem(new MenuItem(_('Mission Center'), () => this._openMissionCenter()));
 
         if (showSoftwareCenter)
             this._addItem(new MenuItem(_('Software Center'), () => this._openSoftwareCenter()));
 
+        this._addItem(new MenuItem(_('Mission Center'), () => this._openMissionCenter()));
         this._addItem(new MenuItem(_('Terminal'), () => this._openTerminal()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
         this._addItem(new MenuItem(_('Extensions'), () => this._openExtensionsApp()));
@@ -93,10 +93,11 @@ class LogoMenuMenuButton extends PanelMenu.Button {
             this._addItem(new MenuItem(_('Sleep'), () => this._sleep()));
             this._addItem(new MenuItem(_('Restart...'), () => this._restart()));
             this._addItem(new MenuItem(_('Shut Down...'), () => this._shutdown()));
-            this._addItem(new PopupMenu.PopupSeparatorMenuItem());
 
-            if (showLockScreen)
+            if (showLockScreen) {
+                this._addItem(new PopupMenu.PopupSeparatorMenuItem());
                 this._addItem(new MenuItem(_('Lock Screen'), () => this._lockScreen()));
+            }
 
             //this._addItem(new MenuItem(_('Log Out...'), () => this._logOut()));
         } else if (!showPowerOptions && showLockScreen) {
