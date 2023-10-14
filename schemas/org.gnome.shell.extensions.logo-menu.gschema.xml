@@ -70,7 +70,7 @@
     </key>
 
     <key type="b" name="symbolic-icon">
-      <default>true</default>
+      <default>false</default>
       <summary>Toggle if user chose symbolic or coloured distro logo</summary>
       <description>Toggle if user chose symbolic or coloured distro logo.</description>
     </key>
