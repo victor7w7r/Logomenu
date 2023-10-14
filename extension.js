@@ -65,7 +65,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
         // this._addItem(new MenuItem(_('About My System'), () => this._aboutThisDistro()));
         // this._addItem(new MenuItem(_('System Settings...'), () => this._systemPreferences()));
-        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
+        // this._addItem(new PopupMenu.PopupSeparatorMenuItem());
         this._addItem(new MenuItem(_('Activities'), () => this._overviewToggle()));
         this._addItem(new MenuItem(_('App Grid'), () => this._showAppGrid()));
         this._addItem(new MenuItem(_('Steam'), () => this._openSteam()));
@@ -77,7 +77,6 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         if (showSoftwareCenter)
             this._addItem(new MenuItem(_('Software Center'), () => this._openSoftwareCenter()));
 
-        
         this._addItem(new MenuItem(_('Terminal'), () => this._openTerminal()));
         this._addItem(new MenuItem(_('Extensions'), () => this._openExtensionsApp()));
         this._addItem(new MenuItem(_('Bazzite Portal'), () => this._openBazzitePortal()));
