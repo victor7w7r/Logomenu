@@ -68,6 +68,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         // this._addItem(new PopupMenu.PopupSeparatorMenuItem());
         this._addItem(new MenuItem(_('Activities'), () => this._overviewToggle()));
         this._addItem(new MenuItem(_('App Grid'), () => this._showAppGrid()));
+        this._addItem(new MenuItem(_('Files'), () => this._openNautilus()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
         this._addItem(new MenuItem(_('Steam'), () => this._openSteam()));
         this._addItem(new MenuItem(_('Lutris'), () => this._openLutris()));
@@ -162,6 +163,10 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
     _forceQuit() {
         Util.spawn(['xkill']);
+    }
+
+    _openNautilus() {
+        Util.spawn(['nautilus']);
     }
 
     _openTerminal() {
