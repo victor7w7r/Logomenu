@@ -78,7 +78,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         if (showSoftwareCenter)
             this._addItem(new MenuItem(_('Software Center'), () => this._openSoftwareCenter()));
 
-        this._addItem(new MenuItem(_('Mission Center'), () => this._openMissionCenter()));
+        this._addItem(new MenuItem(_('System Monitor'), () => this._openSystemMonitor()));
         this._addItem(new MenuItem(_('Terminal'), () => this._openTerminal()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
         this._addItem(new MenuItem(_('Extensions'), () => this._openExtensionsApp()));
@@ -189,8 +189,8 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         Util.spawn(['yafti', '--force']);
     }
 
-    _openMissionCenter() {
-        Util.spawn(['flatpak', 'run', 'io.missioncenter.MissionCenter']);
+    _openSystemMonitor() {
+        Util.trySpawnCommandLine(this._settings.get_string('menu-button-system-monitor'));
     }
 
     _openExtensionsApp() {
