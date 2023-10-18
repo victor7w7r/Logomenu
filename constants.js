@@ -56,4 +56,5 @@ export const ColouredDistroIcons = [
     {PATH: '/Resources/asahilinux-logo.svg'},
     {PATH: '/Resources/zorin-logo.svg'},
     {PATH: '/Resources/vanilla-logo.svg'},
+    {PATH: '/Resources/gnome-logo.svg'},
 ];
