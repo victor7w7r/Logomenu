@@ -76,7 +76,7 @@
     </key>
 
     <key type="s" name="menu-button-system-monitor">
-      <default>"io.missioncenter.MissionCenter.desktop"</default>
+      <default>"flatpak run io.missioncenter.MissionCenter"</default>
       <summary>Menu System Monitor</summary>
       <description>Change the Menu System Monitor.</description>
     </key>
