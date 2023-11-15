@@ -296,6 +296,21 @@ export const LogoMenuOptionsPage = GObject.registerClass(class LogoMenuOptionsWi
 
         showPowerOptionsRow.add_suffix(showPowerOptionsSwitch);
 
+        // Gamemode
+        const showGamemodeRow = new Adw.ActionRow({
+            title: _('Enable Return to Gamemode Option'),
+        });
+        const showGamemodeSwitch = new Gtk.Switch({
+            valign: Gtk.Align.CENTER,
+        });
+
+        showGamemodeSwitch.set_active(this._settings.get_boolean('show-gamemode'));
+        showGamemodeSwitch.connect('notify::active', widget => {
+            this._settings.set_boolean('show-gamemode', widget.get_active());
+        });
+
+        showPowerOptionsRow.add_suffix(showGamemodeSwitch);
+
         // Toggle Force Quit option and build it's option in prefs
         const forceQuitOptionrow = new Adw.ActionRow({
             title: _('Hide Force Quit option'),
@@ -385,6 +400,7 @@ export const LogoMenuOptionsPage = GObject.registerClass(class LogoMenuOptionsWi
         prefGroup1.add(systemMonitorRow);
 
         prefGroup2.add(showPowerOptionsRow);
+        prefGroup2.add(showGamemodeRow);
         prefGroup2.add(forceQuitOptionrow);
         prefGroup2.add(lockScreenOptionRow);
         prefGroup2.add(softwareCentreOptionRow);

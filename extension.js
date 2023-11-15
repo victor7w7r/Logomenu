@@ -47,6 +47,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         // Menu
         this._settings.connectObject('changed::hide-softwarecentre', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-power-options', () => this._displayMenuItems(), this);
+        this._settings.connectObject('changed::show-gamemode', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::hide-forcequit', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-lockscreen', () => this._displayMenuItems(), this);
         this._displayMenuItems();
@@ -61,6 +62,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
     _displayMenuItems() {
         const showPowerOptions = this._settings.get_boolean('show-power-options');
+        const showReturnToGamingMode = this._settings.get_boolean('show-gamemode');
         const showForceQuit = !this._settings.get_boolean('hide-forcequit');
         const showLockScreen = this._settings.get_boolean('show-lockscreen');
         const showSoftwareCenter = !this._settings.get_boolean('hide-softwarecentre');
@@ -76,7 +78,9 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
         this._addItem(new MenuItem(_('Steam'), () => this._openSteam()));
         this._addItem(new MenuItem(_('Lutris'), () => this._openLutris()));
-        this._addItem(new MenuItem(_('Return to Gaming Mode'), () => this._logOut()));
+        if (showReturnToGamingMode)
+            this._addItem(new MenuItem(_('Return to Gaming Mode'), () => this._logOut()));
+
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
 
         if (showSoftwareCenter)

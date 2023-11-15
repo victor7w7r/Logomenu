@@ -45,6 +45,12 @@
       <description>Toggle power options visibility.</description>
     </key>
 
+    <key type="b" name="show-gamemode">
+      <default>false</default>
+      <summary>Toggle return to gamemode visiblity</summary>
+      <description>Toggle return to gamemode visibility.</description>
+    </key>
+
     <key type="b" name="hide-forcequit">
       <default>true</default>
       <summary>Toggle Force Quit option visibility</summary>
