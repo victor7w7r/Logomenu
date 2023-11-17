@@ -34,6 +34,7 @@ export const SymbolicDistroIcons = [
 
 export const ColouredDistroIcons = [
     {PATH: '/Resources/bazzite-logo.svg'},
+    {PATH: '/Resources/bazzite-logo-le.svg'},
     {PATH: '/Resources/steam-deck-logo.svg'},
     {PATH: '/Resources/steam-deck-le-logo.svg'},
     {PATH: '/Resources/fedora-logo.svg'},
