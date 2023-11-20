@@ -423,6 +423,9 @@ export const AboutPage = GObject.registerClass(class LogoMenuAboutPage extends A
             icon_name: 'info-symbolic',
         });
 
+        const PROJECT_IMAGE = 'settings-logo-menu-logo';
+        const EXTERNAL_LINK_ICON = 'adw-external-link-symbolic'
+
         const logoMenuLogoGroup = new Adw.PreferencesGroup();
         const logoMenuBox = new Gtk.Box({
             orientation: Gtk.Orientation.VERTICAL,
@@ -430,6 +433,12 @@ export const AboutPage = GObject.registerClass(class LogoMenuAboutPage extends A
             margin_bottom: 10,
             hexpand: false,
             vexpand: false,
+        });
+
+        const projectImage = new Gtk.Image({
+            margin_bottom: 15,
+            icon_name: PROJECT_IMAGE,
+            pixel_size: 100,
         });
 
         const logoMenuLabel = new Gtk.Label({
@@ -445,6 +454,7 @@ export const AboutPage = GObject.registerClass(class LogoMenuAboutPage extends A
             vexpand: false,
             margin_bottom: 5,
         });
+        logoMenuBox.append(projectImage);
         logoMenuBox.append(logoMenuLabel);
         logoMenuBox.append(projectDescriptionLabel);
         logoMenuLogoGroup.add(logoMenuBox);
@@ -473,13 +483,6 @@ export const AboutPage = GObject.registerClass(class LogoMenuAboutPage extends A
             label: `${Config.PACKAGE_VERSION.toString()}`,
         }));
 
-        const githubLinkRow = new Adw.ActionRow({
-            title: _('Github'),
-        });
-        githubLinkRow.add_suffix(new Gtk.Label({
-            label: 'Github.com/Aryan20/LogoMenu',
-        }));
-
         const createdByRow = new Adw.ActionRow({
             title: _('Created with love by'),
         });
@@ -490,15 +493,33 @@ export const AboutPage = GObject.registerClass(class LogoMenuAboutPage extends A
         const matrixRoomRow = new Adw.ActionRow({
             title: _('Matrix/Element room'),
         });
-        matrixRoomRow.add_suffix(new Gtk.Label({
-            label: '#logo-menu:matrix.org',
+        matrixRoomRow.add_suffix(new Gtk.LinkButton({
+            icon_name: EXTERNAL_LINK_ICON,
+            uri: 'https://matrix.to/#/#logo-menu:matrix.org',
+        }));
+
+        const githubLinkRow = new Adw.ActionRow({
+            title: 'GitHub',
+        });
+        githubLinkRow.add_suffix(new Gtk.LinkButton({
+            icon_name: EXTERNAL_LINK_ICON,
+            uri: 'https://github.com/Aryan20/LogoMenu',
+        }));
+
+        const contributorRow = new Adw.ActionRow({
+            title: _('Contributors'),
+        });
+        contributorRow.add_suffix(new Gtk.LinkButton({
+            icon_name: EXTERNAL_LINK_ICON,
+            uri: 'https://github.com/Aryan20/Logomenu/graphs/contributors'
         }));
 
         extensionInfoGroup.add(logoMenuVersionRow);
         extensionInfoGroup.add(gnomeVersionRow);
-        extensionInfoGroup.add(githubLinkRow);
         extensionInfoGroup.add(createdByRow);
+        extensionInfoGroup.add(githubLinkRow);
         extensionInfoGroup.add(matrixRoomRow);
+        extensionInfoGroup.add(contributorRow);
 
         this.add(extensionInfoGroup);
         // -----------------------------------------------------------------------
