@@ -186,7 +186,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _openSteam() {
-        Util.spawn(['steam']);
+        Util.spawn(['bazzite-steam']);
     }
 
     _openLutris() {
