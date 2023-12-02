@@ -309,7 +309,7 @@ export const LogoMenuOptionsPage = GObject.registerClass(class LogoMenuOptionsWi
             this._settings.set_boolean('show-gamemode', widget.get_active());
         });
 
-        showPowerOptionsRow.add_suffix(showGamemodeSwitch);
+        showGamemodeRow.add_suffix(showGamemodeSwitch);
 
         // Toggle Force Quit option and build it's option in prefs
         const forceQuitOptionrow = new Adw.ActionRow({
