@@ -7,7 +7,7 @@
    version="1.1"
    id="svg8"
    sodipodi:docname="bazzite-logo-le.svg"
-   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,13 +21,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.48958333"
-     inkscape:cx="754.72341"
-     inkscape:cy="129.70213"
+     inkscape:zoom="0.69237539"
+     inkscape:cx="158.1512"
+     inkscape:cy="361.79796"
      inkscape:window-width="1457"
      inkscape:window-height="1212"
-     inkscape:window-x="26"
-     inkscape:window-y="23"
+     inkscape:window-x="433"
+     inkscape:window-y="64"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg8" />
   <path
@@ -79,10 +79,10 @@
          id="stop7"
          style="stop-color:#f93822;stop-opacity:1;" />
       <stop
-         offset="0.74121201"
+         offset="0.85799414"
          stop-color="#8A2BE2"
          id="stop8"
-         style="stop-color:#e98f54;stop-opacity:1;" />
+         style="stop-color:#f97922;stop-opacity:1;" />
     </linearGradient>
   </defs>
 </svg>
