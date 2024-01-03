@@ -87,14 +87,14 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
 
-        if (showSoftwareCenter)
-            this._addItem(new MenuItem(_('Software Center'), () => this._openSoftwareCenter()));
-
         this._addItem(new MenuItem(_('System Monitor'), () => this._openSystemMonitor()));
         this._addItem(new MenuItem(_('Terminal'), () => this._openTerminal()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
+
+        if (showSoftwareCenter)
+            this._addItem(new MenuItem(_('Software Center'), () => this._openSoftwareCenter()));
+
         this._addItem(new MenuItem(_('Extensions'), () => this._openExtensionsApp()));
-        this._addItem(new MenuItem(_('Bazzite Portal'), () => this._openBazzitePortal()));
 
         if (showForceQuit) {
             this._addItem(new PopupMenu.PopupSeparatorMenuItem());
@@ -195,10 +195,6 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
     _openLutris() {
         Util.spawn(['lutris']);
-    }
-
-    _openBazzitePortal() {
-        Util.spawn(['yafti', '--force']);
     }
 
     _openSystemMonitor() {
