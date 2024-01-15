@@ -89,7 +89,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
 
-        this._addItem(new MenuItem(_('System Monitor'), () => this._openSystemMonitor()));
+        this._addItem(new MenuItem(_('Mission Center'), () => this._openSystemMonitor()));
         this._addItem(new MenuItem(_('Prompt'), () => this._openTerminal()));
         if (showPods)
             this._addItem(new MenuItem(_('Pods'), () => this._openPods()));
