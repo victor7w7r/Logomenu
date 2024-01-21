@@ -34,7 +34,7 @@
     </key>
 
     <key type="s" name="menu-button-terminal">
-      <default>"xdg-terminal-exec"</default>
+      <default>"prompt --new-window"</default>
       <summary>Menu Button Terminal</summary>
       <description>Change the Menu Button Terminal.</description>
     </key>

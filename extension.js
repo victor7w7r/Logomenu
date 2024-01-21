@@ -124,6 +124,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         }
 
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
+        this._addItem(new MenuItem(_('Update System'), () => this._updateSystem()));
         this._addItem(new MenuItem(_('About My System'), () => this._aboutThisDistro()));
     }
 
@@ -138,6 +139,10 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
     _aboutThisDistro() {
         Util.spawn(['gnome-control-center', 'info-overview']);
+    }
+
+    _updateSystem() {
+        Util.spawn(['prompt', '--', 'ujust', 'update']);
     }
 
     _systemPreferences() {
