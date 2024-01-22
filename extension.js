@@ -124,7 +124,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         }
 
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-        this._addItem(new MenuItem(_('Update System'), () => this._updateSystem()));
+        this._addItem(new MenuItem(_('System Update'), () => this._updateSystem()));
         this._addItem(new MenuItem(_('About My System'), () => this._aboutThisDistro()));
     }
 
