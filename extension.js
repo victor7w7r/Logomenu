@@ -142,7 +142,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _updateSystem() {
-        Util.spawn(['prompt', '--', 'ujust', 'update']);
+        Util.spawn(['ptyxis', '--', 'ujust', 'update']);
     }
 
     _systemPreferences() {
