@@ -51,10 +51,10 @@
       <description>Toggle return to gamemode visibility.</description>
     </key>
 
-    <key type="b" name="show-pods">
+    <key type="b" name="show-boxbuddy">
       <default>false</default>
-      <summary>Toggle Pods option visibility</summary>
-      <description>Toggle Pods option visibility.</description>
+      <summary>Toggle BoxBuddy option visibility</summary>
+      <description>Toggle BoxBuddy option visibility.</description>
     </key>
 
     <key type="b" name="hide-forcequit">
