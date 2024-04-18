@@ -15,6 +15,7 @@ BuildRequires: make
 BuildRequires: unzip
 BuildRequires: gettext
 BuildRequires: gnome-shell
+BuildRequires: glib2
 
 Requires:    gnome-shell >= 3.12
 %description
@@ -22,6 +23,9 @@ Gnome shell extension that provides a Steam Deck icon in the top bar and helpful
 
 %prep
 %autosetup -n Logomenu-main
+
+%build
+glib-compile-schemas schemas/
 
 %install
 make build
