@@ -24,13 +24,11 @@ Gnome shell extension that provides a Steam Deck icon in the top bar and helpful
 %prep
 %autosetup -n Logomenu-main
 
-%build
-glib-compile-schemas schemas/
-
 %install
 make build
 mkdir -p %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
 unzip logomenu@aryan_k.shell-extension.zip -d %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
+glib-compile-schemas %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}/schemas/
 
 %files
 %license LICENSE
