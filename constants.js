@@ -2,6 +2,7 @@ export const SymbolicDistroIcons = [
     {PATH: 'start-here-symbolic'},
     {PATH: '/Resources/bazzite-logo-symbolic.svg'},
     {PATH: '/Resources/steam-deck-logo-symbolic.svg'},
+    {PATH: '/Resources/ublue-logo-symbolic.svg'},
     {PATH: '/Resources/fedora-logo-symbolic.svg'},
     {PATH: '/Resources/debian-logo-symbolic.svg'},
     {PATH: '/Resources/manjaro-logo-symbolic.svg'},
