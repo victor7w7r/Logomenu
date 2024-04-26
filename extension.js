@@ -206,11 +206,11 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _openSteam() {
-        Util.spawn(['bazzite-steam']);
+        Util.spawn(['switcherooctl', 'launch', 'bazzite-steam']);
     }
 
     _openLutris() {
-        Util.spawn(['lutris']);
+        Util.spawn(['switcherooctl', 'launch', 'lutris']);
     }
 
     _openSystemMonitor() {
