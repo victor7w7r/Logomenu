@@ -3,6 +3,7 @@ export const SymbolicDistroIcons = [
     {PATH: '/Resources/bazzite-logo-symbolic.svg'},
     {PATH: '/Resources/steam-deck-logo-symbolic.svg'},
     {PATH: '/Resources/ublue-logo-symbolic.svg'},
+    {PATH: '/Resources/framework-logo-symbolic.svg'},
     {PATH: '/Resources/fedora-logo-symbolic.svg'},
     {PATH: '/Resources/debian-logo-symbolic.svg'},
     {PATH: '/Resources/manjaro-logo-symbolic.svg'},
@@ -31,7 +32,6 @@ export const SymbolicDistroIcons = [
     {PATH: '/Resources/zorin-logo-symbolic.svg'},
     {PATH: '/Resources/void-logo-symbolic.svg'},
     {PATH: '/Resources/nobara-logo-symbolic.svg'},
-    {PATH: '/Resources/framework-logo-symbolic.svg'},
 ];
 
 export const ColouredDistroIcons = [
