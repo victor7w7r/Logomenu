@@ -11,7 +11,6 @@ URL:           https://github.com/KyleGospo/Logomenu
 Source0:       %{url}/archive/refs/heads/main.tar.gz
 BuildArch:     noarch
 
-BuildRequires: make
 BuildRequires: unzip
 BuildRequires: gettext
 BuildRequires: gnome-shell
@@ -25,9 +24,8 @@ Gnome shell extension that provides a Steam Deck icon in the top bar and helpful
 %autosetup -n Logomenu-main
 
 %install
-make build
 mkdir -p %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
-unzip logomenu@aryan_k.shell-extension.zip -d %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
+mv po PrefsLib Resources schemas *.js *.json *.css %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}
 glib-compile-schemas %{buildroot}%{_datadir}/gnome-shell/extensions/%{uuid}/schemas/
 
 %files
