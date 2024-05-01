@@ -31,6 +31,7 @@ export const SymbolicDistroIcons = [
     {PATH: '/Resources/zorin-logo-symbolic.svg'},
     {PATH: '/Resources/void-logo-symbolic.svg'},
     {PATH: '/Resources/nobara-logo-symbolic.svg'},
+    {PATH: '/Resources/framework-logo-symbolic.svg'},
 ];
 
 export const ColouredDistroIcons = [
