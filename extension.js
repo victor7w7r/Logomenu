@@ -72,7 +72,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         const showForceQuit = !this._settings.get_boolean('hide-forcequit');
         const showLockScreen = this._settings.get_boolean('show-lockscreen');
         const showSoftwareCenter = !this._settings.get_boolean('hide-softwarecentre');
-        const showWarehouse = !this._settings.set_boolean('hide-warehouse');
+        const showWarehouse = !this._settings.get_boolean('hide-warehouse');
         const showActivitiesButton = this._settings.get_boolean('show-activities-button');
 
         this.menu.removeAll();
