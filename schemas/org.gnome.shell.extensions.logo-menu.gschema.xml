@@ -87,6 +87,12 @@
       <description>Toggle Software Centre option visibility.</description>
     </key>
 
+    <key type="b" name="hide-warehouse">
+      <default>false</default>
+      <summary>Toggle Warehouse option visibility</summary>
+      <description>Toggle Warehouse option visibility.</description>
+    </key>
+
     <key type="b" name="show-activities-button">
       <default>true</default>
       <summary>Toggle visibility of the top panel activities button</summary>

@@ -48,6 +48,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
         // Menu
         this._settings.connectObject('changed::hide-softwarecentre', () => this._displayMenuItems(), this);
+        this._settings.connectObject('changed::hide-warehouse', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-power-options', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-gamemode', () => this._displayMenuItems(), this);
         this._settings.connectObject('changed::show-boxbuddy', () => this._displayMenuItems(), this);
@@ -71,6 +72,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         const showForceQuit = !this._settings.get_boolean('hide-forcequit');
         const showLockScreen = this._settings.get_boolean('show-lockscreen');
         const showSoftwareCenter = !this._settings.get_boolean('hide-softwarecentre');
+        const showWarehouse = !this._settings.set_boolean('hide-warehouse');
         const showActivitiesButton = this._settings.get_boolean('show-activities-button');
 
         this.menu.removeAll();
@@ -100,6 +102,9 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
         if (showSoftwareCenter)
             this._addItem(new MenuItem(_('Software'), () => this._openSoftwareCenter()));
+
+        if (showWarehouse)
+            this._addItem(new MenuItem(_('Warehouse'), () => this._openWarehouse()));
 
         this._addItem(new MenuItem(_('Extension Manager'), () => this._openExtensionsApp()));
 
@@ -203,6 +208,10 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
     _openSoftwareCenter() {
         Util.trySpawnCommandLine(this._settings.get_string('menu-button-software-center'));
+    }
+
+    _openWarehouse() {
+        Util.trySpawnCommandLine('flatpak run io.github.flattool.Warehouse');
     }
 
     _openSteam() {
