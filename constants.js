@@ -66,4 +66,5 @@ export const ColouredDistroIcons = [
     {PATH: '/Resources/gnome-logo.svg'},
     {PATH: '/Resources/clear-linux-logo.svg'},
     {PATH: '/Resources/void-logo.svg'},
+    {PATH: '/Resources/legion-logo.svg'},
 ];
