@@ -5,6 +5,7 @@ export const SymbolicDistroIcons = [
     {PATH: '/Resources/ublue-logo-symbolic.svg'},
     {PATH: '/Resources/framework-logo-symbolic.svg'},
     {PATH: '/Resources/legion-logo-symbolic.svg'},
+    {PATH: '/Resources/asus-rog-logo-symbolic.svg'},
     {PATH: '/Resources/fedora-logo-symbolic.svg'},
     {PATH: '/Resources/debian-logo-symbolic.svg'},
     {PATH: '/Resources/manjaro-logo-symbolic.svg'},
