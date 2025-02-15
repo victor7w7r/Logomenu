@@ -90,7 +90,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         this._addItem(new MenuItem(_('Steam'), () => this._openSteam()));
         this._addItem(new MenuItem(_('Lutris'), () => this._openLutris()));
         if (showReturnToGamingMode)
-            this._addItem(new MenuItem(_('Return to Gaming Mode'), () => this._logOut()));
+            this._addItem(new MenuItem(_('Return to Gaming Mode'), () => this._returnToGamingMode()));
 
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
 
@@ -182,6 +182,10 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         Util.spawn(['loginctl', 'lock-session']);
     }
 
+    _returnToGamingMode() {
+        Util.spawn(['gnome-session-quit', '--logout', '--no-prompt']);
+    }
+	
     _logOut() {
         Util.spawn(['gnome-session-quit', '--logout']);
     }
