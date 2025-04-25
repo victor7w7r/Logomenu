@@ -63,10 +63,10 @@
       <description>Toggle return to gamemode visibility.</description>
     </key>
 
-    <key type="b" name="show-boxbuddy">
+    <key type="b" name="show-distroshelf">
       <default>false</default>
-      <summary>Toggle BoxBuddy option visibility</summary>
-      <description>Toggle BoxBuddy option visibility.</description>
+      <summary>Toggle DistroShelf option visibility</summary>
+      <description>Toggle DistroShelf option visibility.</description>
     </key>
 
     <key type="b" name="hide-forcequit">
