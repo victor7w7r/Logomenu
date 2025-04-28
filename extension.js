@@ -213,7 +213,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _openDistroShelf() {
-        Util.trySpawnCommandLine('flatpak run com.ranfdev.DistroShelf');
+        Util.trySpawnCommandLine('/usr/bin/distroshelf-helper');
     }
 
     _openSoftwareCenter() {
@@ -221,7 +221,7 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _openWarehouse() {
-        Util.trySpawnCommandLine('flatpak run io.github.flattool.Warehouse');
+        Util.trySpawnCommandLine('/usr/bin/warehouse-helper');
     }
 
     _openSteam() {
