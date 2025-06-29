@@ -28,7 +28,7 @@
     </key>
 
     <key type="s" name="menu-button-software-center">
-      <default>"gnome-software"</default>
+      <default>"/usr/bin/bazaar window --auto-service"</default>
       <summary>Menu Button Software Center</summary>
       <description>Change the Menu Button Software Center.</description>
     </key>
@@ -88,7 +88,7 @@
     </key>
 
     <key type="b" name="hide-warehouse">
-      <default>false</default>
+      <default>true</default>
       <summary>Toggle Warehouse option visibility</summary>
       <description>Toggle Warehouse option visibility.</description>
     </key>
@@ -104,7 +104,6 @@
       <summary>Toggle visibility of the top panel icon's shadow </summary>
       <description>Toggle visibility of the top panel icon's shadow.</description>
     </key>
-
 
     <key type="b" name="symbolic-icon">
       <default>false</default>
