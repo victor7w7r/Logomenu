@@ -78,62 +78,31 @@ class LogoMenuMenuButton extends PanelMenu.Button {
 
         this.menu.removeAll();
 
-        // this._addItem(new MenuItem(_('About My System'), () => this._aboutThisDistro()));
-        // this._addItem(new MenuItem(_('System Settings...'), () => this._systemPreferences()));
-        // this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-        if (!showActivitiesButton)
-            this._addItem(new MenuItem(_('Activities'), () => this._overviewToggle()));
-
-        this._addItem(new MenuItem(_('App Grid'), () => this._showAppGrid()));
-        this._addItem(new MenuItem(_('Files'), () => this._openNautilus()));
+        this._addItem(new MenuItem(_('Acerca de esta PC'), () => this._aboutThisDistro()));
         this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-        this._addItem(new MenuItem(_('Steam'), () => this._openSteam()));
-        this._addItem(new MenuItem(_('Lutris'), () => this._openLutris()));
-        if (showReturnToGamingMode)
-            this._addItem(new MenuItem(_('Return to Gaming Mode'), () => this._returnToGamingMode()));
-
-        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-
-        this._addItem(new MenuItem(_('Mission Center'), () => this._openSystemMonitor()));
-        this._addItem(new MenuItem(_('Terminal'), () => this._openTerminal()));
-        if (showDistroShelf)
-            this._addItem(new MenuItem(_('DistroShelf'), () => this._openDistroShelf()));
-
-        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-
-        if (showSoftwareCenter)
-            this._addItem(new MenuItem(_('Bazaar'), () => this._openSoftwareCenter()));
-
-        if (showWarehouse)
-            this._addItem(new MenuItem(_('Warehouse'), () => this._openWarehouse()));
-
+        this._addItem(new MenuItem(_('Configuración del sistema...'), () => this._systemPreferences()));
         this._addItem(new MenuItem(_('Extension Manager'), () => this._openExtensionsApp()));
+        this._addItem(new MenuItem(_('Gestión de software'), () => this._openOctopi()));
 
         if (showForceQuit) {
             this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-            this._addItem(new MenuItem(_('Force Quit App'), () => this._forceQuit()));
+            this._addItem(new MenuItem(_('Forzar salida...'), () => this._forceQuit()));
+            this._addItem(new MenuItem(_('Mission Center'), () => this._openSystemMonitor()));
         }
 
         if (showPowerOptions) {
             this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-            this._addItem(new MenuItem(_('Sleep'), () => this._sleep()));
-            this._addItem(new MenuItem(_('Restart...'), () => this._restart()));
-            this._addItem(new MenuItem(_('Shut Down...'), () => this._shutdown()));
+            this._addItem(new MenuItem(_('Reposo'), () => this._sleep()));
+            this._addItem(new MenuItem(_('Reiniciar...'), () => this._restart()));
+            this._addItem(new MenuItem(_('Apagar...'), () => this._shutdown()));
 
             if (showLockScreen) {
                 this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-                this._addItem(new MenuItem(_('Lock Screen'), () => this._lockScreen()));
+                this._addItem(new MenuItem(_('Bloquear pantalla'), () => this._lockScreen()));
+                this._addItem(new MenuItem(_('Cerrar sesión...'), () => this._logOut()));
             }
-
-            //this._addItem(new MenuItem(_('Log Out...'), () => this._logOut()));
-        } else if (!showPowerOptions && showLockScreen) {
-            this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-            this._addItem(new MenuItem(_('Lock Screen'), () => this._lockScreen()));
         }
 
-        this._addItem(new PopupMenu.PopupSeparatorMenuItem());
-        this._addItem(new MenuItem(_('System Update'), () => this._updateSystem()));
-        this._addItem(new MenuItem(_('About My System'), () => this._aboutThisDistro()));
     }
 
     _buttonPressEvent(actor, event) {
@@ -152,10 +121,6 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         } else {
             Util.spawn(['gnome-control-center', 'info-overview']);
         }
-    }
-
-    _updateSystem() {
-        Util.spawn(['ptyxis', '--', 'ujust', 'update']);
     }
 
     _systemPreferences() {
@@ -196,8 +161,6 @@ class LogoMenuMenuButton extends PanelMenu.Button {
         Main.overview.dash.showAppsButton.checked = true;
         // in 3.36 pressing the button is usualy enough to activate overview, but not always
         Main.overview.show();
-        // pressing apps btn before overview has no effect in GS 40, so once again
-        Main.overview.dash.showAppsButton.checked = true;
     }
 
     _forceQuit() {
@@ -233,24 +196,15 @@ class LogoMenuMenuButton extends PanelMenu.Button {
     }
 
     _openSystemMonitor() {
-        Util.trySpawnCommandLine(this._settings.get_string('menu-button-system-monitor'));
+        Util.trySpawnCommandLine('/usr/bin/missioncenter');
+    }
+
+    _openOctopi() {
+        Util.trySpawnCommandLine('/usr/bin/octopi');
     }
 
     _openExtensionsApp() {
-        const appSys = Shell.AppSystem.get_default();
-        const extensionManagerChoice = this._settings.get_string('menu-button-extensions-app');
-        const extensionApp = appSys.lookup_app(extensionManagerChoice);
-        if (extensionApp) {
-            try {
-                extensionApp.launch(
-                    0,
-                    -1,
-                    Shell.AppLaunchGpu.APP_PREF
-                );
-            } catch (e) {
-                log(e);
-            }
-        }
+      Util.trySpawnCommandLine('/usr/bin/extension-manager');
     }
 
     setIconImage() {
