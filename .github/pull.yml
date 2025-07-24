@@ -1,7 +1,7 @@
 version: "1"
 rules:
   - base: main
-    upstream: Aryan20:main
+    upstream: victor7w7r:main
     mergeMethod: merge
     mergeUnstable: false
     assignees:
